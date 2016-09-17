@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <title>Earth Curvature Calculator</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="header">
+        Earth Curvature Calculator
+      </div>
+
+      <div class="distance">
+        <label>
+          Distance:
+          <input id="distance" type="number" value="20">
+        </label>
+      </div>
+      <div class="unit">
+        <label>
+          <input type="radio" id="km" name="unit" checked>
+          Kilometers
+        </label>
+        <label>
+          <input type="radio" id="miles" name="unit">
+          Miles
+        </label>
+      </div>
+      <div class="calculate">
+        <button onclick="calc()">Calculate</button>
+      </div>
+      <div class="result">
+      </div>
+        <div class="explan">
+          <h3>Explanation:</h3>
+            <div class="formula">
+              Pythagoras Formula a&sup2; + b&sup2; = c&sup2;
+            </div>
+            <img src="http://f.o4.no/1474029075_ecurve.png" alt="curvature" style="width:240px;height:228px;">
+            <p> We want to find the height of the curve K between points E and F
+            </P>
+        </div>
+    </div>
+
+    <script>
+      var distance = document.querySelector("#distance");
+      var km = document.querySelector("#km");
+      var miles = document.querySelector("#miles");
+      var result = document.querySelector(".result");
+
+      function calc (){
+        var val = distance.value;
+
+        if(val.length < 1) {
+          distance.focus();
+          return false;
+        }
+        var a = parseFloat(val) / 2;
+        console.log("A: " + a);
+
+        // Earth's radius in kilometers
+        var c = 6370;
+
+        // Convert to miles if miles is checked
+        if(miles.checked) {
+          c = c / 1.609344;
+        }
+
+        console.log("C: " + c);
+
+        var b2 = Math.pow(c, 2) - Math.pow(a, 2);
+        console.log("B2: " + b2);
+
+        var b = Math.sqrt(b2);
+        console.log("B: " + b);
+
+        var h = c - b;
+
+        console.log("H: "+ h);
+
+        // Limit to 6 decimals
+        h = h.toFixed(6);
+
+        if(miles.checked) {
+          h = h + " miles or " + (h * 5280).toFixed(2) + " feet";
+        } else {
+          h = h + " km or " + (h * 1000).toFixed(2) + " meters";
+        }
+
+        // Write result as HTML into result element
+        result.innerHTML = h;
+      }
+
+
+    </script>
+  </body>
+</html>
