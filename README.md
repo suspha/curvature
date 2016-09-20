@@ -1,9 +1,7 @@
 # Earth curvature calculator
 
-Calculate the curvature of the Earth using Pythagoras.
+Calculate the curvature of the Earth using Pythagoras. This does not use the 8 times miles squared formula, and is believed to be correct.
 
-The formula derived is **sqrt((d/2)^2 - r^2) - r**
+[https://suongp.github.io/curvature/](https://suongp.github.io/curvature)
 
-We want to find the height of the curve K between points E and F:
-
-![](http://f.o4.no/1474029075_ecurve.png)
+![](https://suongp.github.io/curvature/images/earth_curvature_calculator_formula.png)
