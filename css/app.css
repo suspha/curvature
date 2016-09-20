@@ -1,7 +1,8 @@
 body {
-  font-family: "Verdana", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #2F4E6F;
   font-size: 16px;
+  line-height: 24px;
 }
 
 div.content{
@@ -13,22 +14,77 @@ div.header h1 {
   font-size: 40px;
 }
 
+div.header {
+  margin-bottom: 1em;
+}
+
+p.link {
+  font-size: 95%;
+}
+
+p.intro {
+  padding-top: 1em;
+}
+
+div.distance {
+  padding-top: 1em;
+}
+
+div.distance select {
+  font-size: 16px;
+  margin-left: 6px;
+}
+
+div.distance input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 3px 5px;
+  width: 100px;
+  margin-left: 6px;
+}
+
 button {
   color: #fff;
   background-color: #cc6633;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 3px 6px;
+  font-size: 13px;
+  margin-left: 6px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+code {
+  background-color: #f5f5f5;
+  padding: 3px 6px;
+  border-radius: 5px;
 }
 
 .hint {
-  font-size: 80%;
-  color: #aaa;
+  font-size: 90%;
+  color: #999;
 }
 
-div.result {
+div.right {
+  float: right;
+}
+
+div.result div.highlight {
   padding-top: 1em;
-  color: #667467;
   font-size: 20px;
+  font-weight: bold;
 }
 
+div.explain {
+  padding-top: 1em;
+  font-size: 95%;
+}
+
+div.explain h2 {
+  font-size: 100%;
+}
+
+div.image {
+  padding-top: 1em;
+}

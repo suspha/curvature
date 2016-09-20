@@ -4,43 +4,51 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-    <title>Earth Curvature Calculator</title>
+    <title>Earth Curvature Calculator Formula</title>
+    <style>
+      @import 'https://fonts.googleapis.com/css?family=Raleway:300,700';
+    </style>
   </head>
   <body>
     <div class="content">
       <div class="header">
         <h1>Earth Curvature Calculator</h1>
-        <p>
-          Use this calculator to calculate the curvature you should be seeing on the earth.
+        <p class="link">
+          by <a href="http://www.nyttnorge.com">NyttNorge.com</a>
+        </p>
+        <p class="intro">
+          Use this calculator to calculate the curvature you should be seeing on the Earth.
         </p>
       </div>
 
-      <div class="distance">
-        <label>
-          Distance:
-          <input id="distance" type="number" value="20">
-        </label>
+      <div class="frame">
+        <div class="distance">
+          <label>
+            Distance:
+            <input id="distance" type="number" value="20">
+          </label>
 
-        <span class="unit">
-          <select id="unit" name="unit">
-            <option value="km">
-              Kilometers
-            </option>
-            <option value="miles">
-              Miles
-            </option>
-          </select>
-        </span>
+          <span class="unit">
+            <select id="unit" name="unit">
+              <option value="km">
+                Kilometers
+              </option>
+              <option value="miles">
+                Miles
+              </option>
+            </select>
+          </span>
 
-        <span class="calculate">
-          <button onclick="calc()">Calculate</button>
-        </span>
+          <span class="calculate">
+            <button onclick="calc()">Calculate</button>
+          </span>
+        </div>
+
+        <div class="result"></div>
       </div>
 
-      <div class="result"></div>
-
       <div class="explain">
-        <h3>Explanation:</h3>
+        <h2>Explanation:</h2>
         <div class="formula">
           <p>
             The Earth's radius (r) is 6371 km or 3959 miles based on
@@ -56,7 +64,7 @@
             We wish to find the height of the curvature (h) between two points on the Earth, which is the viewing distance (d) divided by 2 (b).
           </p>
           <p>
-            The height (h) is c - r (the radius of the Earth).
+            The height (h) is <code>c - r</code>, the radius of the Earth.
           <p>
             Subsituting for b we get the formula <code>h = &radic;<span style="text-decoration: overline">&nbsp;(d/2)&sup2; + r&sup2;&nbsp;</span> &ndash; r</code>
           </p>
@@ -70,7 +78,7 @@
           <a href="https://github.com/suongp/curvature">Source code</a>
         </p>
         <p class="hint">
-          Note: Calculators using the formula <em>8 times the distance in miles squared</em>, <a href="https://dizzib.github.io/earth/curve-calc">like here</a> are wrong, please see the explanation above.
+          Note: Calculators using the formula <em>8 times the distance in miles squared</em>, <a href="https://dizzib.github.io/earth/curve-calc">like here</a> are wrong, they produce too much curvature and does not use Pythagoras.
         </p>
       </div>
     </div>
@@ -120,7 +128,7 @@
         }
 
         // Write result as HTML into result element
-        result.innerHTML = h;
+        result.innerHTML = '<div class="highlight">' + h + '</div>';
       }
 
     </script>
