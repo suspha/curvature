@@ -20,3 +20,15 @@ button {
   border-radius: 5px;
   padding: 3px 6px;
 }
+
+.hint {
+  font-size: 80%;
+  color: #aaa;
+}
+
+div.result {
+  padding-top: 1em;
+  color: #667467;
+  font-size: 20px;
+}
+
