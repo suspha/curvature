@@ -2,7 +2,11 @@ body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #2F4E6F;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 22px;
+}
+
+a:visited, a:active, a {
+  color: blue;
 }
 
 div.content{
@@ -75,14 +79,25 @@ div.right {
   float: right;
 }
 
-div.result div.highlight {
-  padding-top: 1em;
+span.or {
+  font-weight: normal;
+}
+
+div.highlight {
+  padding-top: 1.618em;
   font-size: 20px;
   font-weight: bold;
 }
 
+div.error {
+  padding-top: 1.618em;
+  color: red;
+  font-size: 90%;
+}
+
+
 div.explain {
-  padding-top: 1em;
+  padding-top: 1.618em;
   font-size: 95%;
 }
 
