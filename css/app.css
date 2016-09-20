@@ -1,74 +1,22 @@
-div.content{
-  margin:66px auto;
-  width: 666px;
-  height: 740px;
-  color:#2F4E6F;
-  background-color: #F5F5F5;
-  font-family: verdana;
-  font-size: 40px;
-  padding-left: 15px;
-  padding-top: 15px;
-  border: 1px solid #C8D7E3;
-}
-
-
-div.distance{
-  margin-top: 30px;
-  font-size: 20px;
-
-}
-
-div.unit{
-  margin-top: 33px;
+body {
+  font-family: "Verdana", "Helvetica Neue", Helvetica, sans-serif;
+  color: #2F4E6F;
   font-size: 16px;
-
 }
 
-div.calculate{
-  margin-top: 33px;
-  margin-left: 40px;
-
+div.content{
+  margin: 66px auto 0 auto;
+  width: 666px;
 }
 
-button{
-  height:50px;
-  width: 140px;
-  font-size: 22px;
-  font-weight: 450;
-  color: white;
-  background-color: #CC6633;
+div.header h1 {
+  font-size: 40px;
 }
 
-div.result {
-  padding-top: 1em;
-  color: #667467;
-  font-style: oblique;
-  font-size: 20px;
+button {
+  color: #fff;
+  background-color: #cc6633;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 3px 6px;
 }
-
-div.explan{
-  width: 333px;
-  padding: 6px 0 10px 20px;
-  border-radius: 6px;
-  margin-top: 40px;
-  background-color: white;
-  font-size: 14px;
-}
-
-div.formula{
-  height:20px;
-  width: 150px;
-  color: #B22222;
-  padding-bottom: 15px;
-
-}
-
-
-
-
-
-
-
-
-
-
