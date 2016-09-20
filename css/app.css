@@ -19,7 +19,7 @@ div.header {
 }
 
 p.link {
-  font-size: 95%;
+  font-size: 90%;
 }
 
 p.intro {
@@ -31,7 +31,7 @@ div.distance {
 }
 
 div.distance select {
-  font-size: 16px;
+  font-size: 17px;
   margin-left: 6px;
 }
 
@@ -42,6 +42,7 @@ div.distance input {
   padding: 3px 5px;
   width: 100px;
   margin-left: 6px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 button {
@@ -49,7 +50,7 @@ button {
   background-color: #cc6633;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 3px 6px;
+  padding: 4px 7px;
   font-size: 13px;
   margin-left: 6px;
   font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
@@ -59,6 +60,10 @@ code {
   background-color: #f5f5f5;
   padding: 3px 6px;
   border-radius: 5px;
+}
+
+code.light {
+  background-color: #fffffa;
 }
 
 .hint {
