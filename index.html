@@ -83,7 +83,7 @@
       var distance = document.querySelector("#distance")
         , unit = document.querySelector("#unit")
         , result = document.querySelector(".result")
-        , d, r, c, g, e, a, h, debug = true;
+        , d, r, c, g, e, a, h, m, n, debug = true;
 
       function calc (){
         d = distance.value;
@@ -128,23 +128,34 @@
 
         if(debug) console.log("A: "+ a);
 
-        h = r * (1 - Math.cos(a))
+        h = r * (1 - Math.cos(a));
 
         if(debug) console.log("H: "+ h);
 
-        // Not needed?
+        // Not in use. Keeping it for later.
         if(false) {
-          result.innerHTML = "<div class='error'>Number is too high, please try a lower number.</div>"
+          result.innerHTML = "<div class='error'>Number is too high, please try a lower number.</div>";
           return false;
         }
 
-        // Limit to 5 decimals
-        h = h.toFixed(5);
+        // Limit decimals based on value
+        if(h > 1000) {
+          n = 2;
+        } else if(h > 100) {
+          n = 3;
+        } else if(h > 10) {
+          n = 4;
+        } else {
+          n = 5;
+        }
+
+        // Set large value
+        m = h.toFixed(n);
 
         if(unit.value == 'miles') {
-          h = h + " miles <span class='or'>=</span> " + (h * 5280).toFixed(2) + " feet";
+          h = m + " miles <span class='or'>=</span> " + (h * 5280).toFixed(2) + " feet";
         } else {
-          h = h + " km <span class='or'>=</span> " + (h * 1000).toFixed(2) + " meters";
+          h = m + " km <span class='or'>=</span> " + (h * 1000).toFixed(2) + " meters";
         }
 
         // Write result as HTML into result element
