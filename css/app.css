@@ -2,7 +2,7 @@ body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #2F4E6F;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
 }
 
 a:visited, a:active, a {
@@ -95,10 +95,13 @@ div.error {
   font-size: 90%;
 }
 
-
 div.explain {
   padding-top: 1.618em;
   font-size: 95%;
+}
+
+div.explain p {
+  white-space: nowrap;
 }
 
 div.explain h2 {

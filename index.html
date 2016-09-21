@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-    <title>Earth Curvature Calculator Formula</title>
+    <title>Earth Curvature Calculator</title>
     <style>
       @import 'https://fonts.googleapis.com/css?family=Raleway:300,700';
     </style>
@@ -17,7 +17,7 @@
           by <a href="http://www.nyttnorge.com">NyttNorge.com</a>
         </p>
         <p class="intro">
-          Calculate the drop from your line of sight to the surface of the curved Earth.
+          Accurately calculate the curvature you are supposed to see on the ball Earth.
         </p>
       </div>
 
@@ -51,22 +51,17 @@
         <h2>Explanation:</h2>
         <div class="formula">
           <p>
-            The Earth's radius <code class="light">(r)</code> is 6371 km or 3959 miles based on
-            <a href="https://en.wikipedia.org/wiki/Earth_radius" target="_blank">Wikipedia</a>
+            The Earth's radius <code class="light">(r)</code> is 6371 km or 3959 miles, which gives a circumference <code class="light">(c)</code>of<br>
+            <code>c = 2 * &pi; * r = 40 030 km</code> based on numbers from <a href="https://en.wikipedia.org/wiki/Earth_radius" target="_blank">Wikipedia</a>
           </p>
           <p>
-            Pythagora's formula states that <code>r&sup2; + b&sup2; = c&sup2;</code>
+            We wish to find the height <code class="light">(h)</code> which is the drop in curvature over the distance <code class="light">(d)</code>
           </p>
           <p>
-            Therefore <code>c = &radic;<span style="text-decoration: overline">&nbsp;b&sup2; + r&sup2;&nbsp;</span></code>
-          </p>
+            Using the circumference we find that 1 unit of distance (km or mile) has the angle<br><code>360&deg; / 40030 km = 0.009&deg;</code>. The angle <code class="light">(a)</code> is then <code>a = 0.009 * distance (d)</code>
           <p>
-            The viewing distance <code class="light">(d)</code> at an angle perpendicular (90&deg;) to the Earth's surface, has a drop with max height <code class="light">(h)</code> at its half way point <code class="light">(d/2)</code> or <code class="light">(b)</code>
-          </p>
           <p>
-            The height <code class="light">(h)</code> is <code>c - r</code>
-          <p>
-            Substituting for <code class="light">b</code> we get the formula <code>h = &radic;<span style="text-decoration: overline">&nbsp;(d/2)&sup2; + r&sup2;&nbsp;</span> &ndash; r</code>
+            The derived formula <code>h = r * (1 - cos a)</code> is accurate for any distance <code class="light">(d)</code>
           </p>
         </div>
         <div class="image">
@@ -78,55 +73,74 @@
           <a href="https://github.com/suongp/curvature">Source code</a>
         </p>
         <p class="hint">
-          Note: Calculators using the formula <em>8 times the distance in miles squared</em>, <a target="_blank" href="https://dizzib.github.io/earth/curve-calc">like here,</a> produce much higer numbers. The actual curvature of the Earth is almost 3 times more.
+          Note: Using the formula <em>8 times the distance in miles squared</em>, <a target="_blank" href="https://dizzib.github.io/earth/curve-calc">like here,</a> is not accurate for long distances but are fine for practical use.
         </p>
       </div>
     </div>
 
     <script>
-      var debug = false;
-      var distance = document.querySelector("#distance");
-      var unit = document.querySelector("#unit");
-      var result = document.querySelector(".result");
+
+      var distance = document.querySelector("#distance")
+        , unit = document.querySelector("#unit")
+        , result = document.querySelector(".result")
+        , d, r, c, g, e, a, h, debug = true;
 
       function calc (){
-        var val = distance.value;
+        d = distance.value;
 
-        if(val.length < 1) {
+        if(d.length < 1) {
           distance.focus();
           return false;
         }
-        var b = parseFloat(val) / 2;
-        if(debug) console.log("B: " + b);
+
+        // Convert to number
+        d = parseFloat(d);
+
+        if(debug) console.log("D: "+ d);
 
         // Earth's radius in kilometers
-        var r = 6371;
+        r = 6371;
 
         // Convert to miles if miles is selected
         if(unit.value == 'miles') {
           r = r / 1.609344;
         }
 
-        if(debug) console.log("R: " + r);
+        if(debug) console.log("R: "+ r);
 
-        var a2 = Math.pow(r, 2) - Math.pow(b, 2);
+        // Find the circumference
+        c = 2 * Math.PI * r;
 
-        if(a2 < 0) {
+        if(debug) console.log("C: "+ c);
+
+        // Find degrees per 1 unit (1 km or 1 mile)
+        g = 360 / c;
+
+        if(debug) console.log("G: "+ g);
+
+        // Unit degrees times distance
+        e = g * d;
+
+        if(debug) console.log("E: "+ e);
+
+        // Convert degrees to radians since javascript likes that
+        a = e * (Math.PI / 180);
+
+        if(debug) console.log("A: "+ a);
+
+        h = r * (1 - Math.cos(a))
+
+        if(debug) console.log("H: "+ h);
+
+        // Not needed?
+        if(false) {
           result.innerHTML = "<div class='error'>Number is too high, please try a lower number.</div>"
           return false;
         }
 
-        if(debug) console.log("A2: " + a2);
-
-        var a = Math.sqrt(a2);
-        if(debug) console.log("A: " + a);
-
-        var h = r - a;
-
-        if(debug) console.log("H: "+ h);
-
         // Limit to 5 decimals
         h = h.toFixed(5);
+
         if(unit.value == 'miles') {
           h = h + " miles <span class='or'>=</span> " + (h * 5280).toFixed(2) + " feet";
         } else {
