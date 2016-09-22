@@ -1,7 +1,5 @@
-# Earth curvature calculator
+# Earth Curvature Calculator
 
 Accurately calculate the supposed curvature of the Earth.
 
-[https://suongp.github.io/curvature/](https://suongp.github.io/curvature)
-
-![](https://suongp.github.io/curvature/images/earth_curvature_calculator_formula.png)
+[http://earthcurvature.com](http://earthcurvature.com)
