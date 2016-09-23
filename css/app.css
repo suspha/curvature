@@ -75,6 +75,10 @@ code.light {
   color: #999;
 }
 
+.hidden {
+  display: none;
+}
+
 div.right {
   float: right;
 }
@@ -105,8 +109,24 @@ div.explain p {
   white-space: nowrap;
 }
 
-div.explain h2 {
+div.explain h2, div.table h2 {
   font-size: 100%;
+}
+
+div.table {
+  margin-top: 2em;
+}
+
+div.table table {
+  width: 100%;
+}
+
+table td {
+  text-align: left;
+}
+
+table th {
+  text-align: left;
 }
 
 div.image {
