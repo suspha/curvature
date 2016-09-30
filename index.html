@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset='utf-8'>
+    <meta content='initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
     <meta name="description" content="Accurately calculate the curvature on the ball Earth. Uses a cosine function, works for all distances in both kilometers and miles. Open source on Github.">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
@@ -83,8 +84,9 @@
         <h2>Explanation:</h2>
         <div class="formula">
           <p>
-            The Earth's radius <code class="light">(r)</code> is 6371 km or 3959 miles, which gives a circumference <code class="light">(c)</code>of<br>
-            <code>c = 2 * &pi; * r = 40 030 km</code> based on numbers from <a href="https://en.wikipedia.org/wiki/Earth_radius" target="_blank">Wikipedia</a>
+            The Earth's radius <code class="light">(r)</code> is 6371 km or 3959 miles, based on numbers from <a href="https://en.wikipedia.org/wiki/Earth_radius" target="_blank">Wikipedia</a>,<br>
+            which gives a circumference <code class="light">(c)</code>of
+            <code>c = 2 * &pi; * r = 40 030 km</code>
           </p>
           <p>
             We wish to find the height <code class="light">(h)</code> which is the drop in curvature over the distance <code class="light">(d)</code>
@@ -97,7 +99,7 @@
           </p>
         </div>
         <div class="image">
-          <img src="images/earth_curvature_calculator_formula.png" alt="curvature" style="width:333px;height:333px;">
+          <img src="images/earth_curvature_calculator_formula.png" alt="curvature" width="333px" height="333px">
         </div>
       </div>
       <div class="footer">
