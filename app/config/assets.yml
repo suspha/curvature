@@ -1,0 +1,7 @@
+bundle:
+  js:
+    - /js/haka.js
+    - /js/waveorb.js
+    - /js/app.js
+  css:
+    - /css/build/app.css

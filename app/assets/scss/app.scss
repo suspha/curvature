@@ -1,8 +1,14 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,700';
+
 body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
   color: #2F4E6F;
   font-size: 16px;
   line-height: 24px;
+}
+
+footer {
+  text-align: center;
 }
 
 a:visited, a:active, a {
