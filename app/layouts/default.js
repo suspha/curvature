@@ -12,6 +12,7 @@ module.exports = async function($) {
         ${$.script('/bundle.js')}
         ${$.style('/bundle.css')}
         ${process.env.NODE_ENV == 'development' ? $.script('/js/dev.js') : ''}
+        <script async defer data-domain="earthcurvature.com" src="https://plausible.io/js/plausible.js"></script>
       </head>
       <body>
         <div class="content">${$.page.content}</div>
