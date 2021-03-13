@@ -24,11 +24,11 @@
     "type": "git",
     "url": "https://github.com/suspha/curvature"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Susana Pham",
+  "license": "MIT",
   "dependencies": {
     "sass": "^1.32.8",
-    "waveorb": "^0.13.28"
+    "waveorb": "^0.14.9"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
