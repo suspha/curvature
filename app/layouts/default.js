@@ -16,9 +16,6 @@ module.exports = async function($) {
       </head>
       <body>
         <div class="content">${$.page.content}</div>
-        <footer>
-          Made by <a href="https://eldoy.com">Eldøy Projects</a>, Oslo, Norway
-        </footer>
       </body>
     </html>
   `
