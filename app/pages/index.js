@@ -159,8 +159,8 @@ module.exports = async function ($) {
         <img
           src="/img/earth_curvature_calculator_formula.png"
           alt="curvature"
-          width="333px"
-          height="333px"
+          width="333"
+          height="333"
         />
       </div>
     </div>

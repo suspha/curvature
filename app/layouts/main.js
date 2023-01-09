@@ -4,10 +4,7 @@ module.exports = async function ($) {
     <html lang="en">
       <head>
         <meta charset="utf-8" />
-        <meta
-          content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-          name="viewport"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Accurately calculate the curvature on the ball Earth. Uses a cosine function, works for all distances in both kilometers and miles. Open source on Github."
