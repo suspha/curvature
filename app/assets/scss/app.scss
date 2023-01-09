@@ -1,27 +1,32 @@
-@import 'https://fonts.googleapis.com/css?family=Raleway:300,700';
+$font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 
 body {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
-  color: #2F4E6F;
-  font-size: 16px;
-  line-height: 24px;
+  font-family: $font-family;
+  color: #2f4e6f;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 footer {
   text-align: center;
+  padding: 1rem 0;
+  font-size: 90%;
 }
 
-a:visited, a:active, a {
+a:visited,
+a:active,
+a {
   color: blue;
 }
 
-div.content{
+div.content {
   margin: 66px auto 0 auto;
   width: 666px;
 }
 
 div.header h1 {
   font-size: 40px;
+  margin-bottom: 0;
 }
 
 div.header {
@@ -52,7 +57,7 @@ div.distance input {
   padding: 3px 5px;
   width: 100px;
   margin-left: 6px;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: $font-family;
 }
 
 button {
@@ -63,7 +68,7 @@ button {
   padding: 4px 7px;
   font-size: 13px;
   margin-left: 6px;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: $font-family;
 }
 
 code {
@@ -78,7 +83,7 @@ code.light {
 
 .hint {
   font-size: 90%;
-  color: #999;
+  color: #666;
 }
 
 .hidden {
@@ -115,7 +120,8 @@ div.explain p {
   white-space: nowrap;
 }
 
-div.explain h2, div.table h2 {
+div.explain h2,
+div.table h2 {
   font-size: 100%;
 }
 

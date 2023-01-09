@@ -2,12 +2,14 @@ module.exports = async function ($) {
   return /* HTML */ `
     <div class="header">
       <h1>Earth Curvature Calculator</h1>
+      <div class="madeby">
+        by <a href="https://eldoy.com">Eldøy Projects</a>
+      </div>
       <p class="intro">
         Accurately calculate the curvature you are supposed to see on the ball
         Earth.
       </p>
     </div>
-
     <div class="frame">
       <div class="distance">
         <label>
