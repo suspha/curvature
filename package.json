@@ -4,7 +4,7 @@
   "description": "Calculate the Earth curvature",
   "scripts": {
     "dev": "npm run clear:css && npm run build:css && concurrently -n 🔥,💗 \"npm run watch:app\" \"npm run watch:css\"",
-    "watch:app": "nodemon -e js,mjs,json,yml,css,md -i dist -x waveorb serve",
+    "watch:app": "nodemon -e '*' -i dist -x waveorb serve",
     "watch:css": "sass --watch app/assets/scss/app.scss app/assets/css/build/app.css",
     "build:css": "sass app/assets/scss/app.scss app/assets/css/build/app.css",
     "build:css:min": "sass --style compressed --no-source-map app/assets/scss/app.scss app/assets/css/build/app.css",
@@ -23,14 +23,14 @@
     "type": "git",
     "url": "https://github.com/suspha/curvature"
   },
-  "author": "Susana Pham",
+  "author": "Susana Pham <susana@eldoy.com>",
   "license": "MIT",
   "dependencies": {
-    "sass": "^1.32.12",
-    "waveorb": "^0.14.15"
+    "sass": "^1.57.1",
+    "waveorb": "^0.30.36"
   },
   "devDependencies": {
-    "concurrently": "^6.0.2",
-    "jest": "^26.6.3"
+    "concurrently": "^7.6.0",
+    "jest": "^29.3.1"
   }
 }
