@@ -35,23 +35,6 @@ module.exports = async function ($) {
         ></script>
       </head>
       <body>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7244493236252364"
-          crossorigin="anonymous"
-        ></script>
-        <!-- earthcurvature -->
-        <ins
-          class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-7244493236252364"
-          data-ad-slot="9550666660"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-        <script>
-          ;(adsbygoogle = window.adsbygoogle || []).push({})
-        </script>
         <div class="content">${$.page.content}</div>
         <footer>
           Made by <a href="https://eldoy.com">Eldøy Projects</a>, Oslo, Norway
