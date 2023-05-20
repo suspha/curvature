@@ -29,9 +29,9 @@ module.exports = async function ($) {
           src="https://plausible.io/js/plausible.js"
         ></script>
         <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7244493236252364"
-          crossorigin="anonymous"
+          defer
+          data-domain="earthcurvature.com"
+          src="https://tactility.no/js/tactility.js"
         ></script>
       </head>
       <body>
