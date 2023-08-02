@@ -15,3 +15,6 @@ var x = Math.cos(e) * r
 var h = r - x
 
 console.log({ d, r, c, g, a, b, e, x, h })
+
+// Alternative one-liner formula
+var h2 = r - Math.cos(((g * d) / 2) * (Math.PI / 180)) * r
