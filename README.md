@@ -4,7 +4,7 @@ Welcome to your new Waveorb application!
 
 This template includes a fully working web app with pages, navigation, bundled assets, and more. Remove the things you don't need.
 
-The documentation for Waveorb is [found here.](https://waveorb.com/docs.html)
+The documentation for Waveorb is [found here.](https://waveorb.com/docs)
 
 ### Installation
 ```bash
