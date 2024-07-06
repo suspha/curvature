@@ -33,6 +33,11 @@ module.exports = async function ($) {
           data-domain="earthcurvature.com"
           src="https://tactility.no/js/tactility.js"
         ></script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7244493236252364"
+          crossorigin="anonymous"
+        ></script>
       </head>
       <body>
         <div class="content">${$.page.content}</div>
