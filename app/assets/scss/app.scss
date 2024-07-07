@@ -1,8 +1,18 @@
 $font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 
-body {
+*,
+*:after,
+*:before {
   font-family: $font-family;
-  color: #2f4e6f;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: #111;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -19,14 +29,39 @@ a {
   color: blue;
 }
 
-div.content {
-  margin: 66px auto 0 auto;
-  width: 666px;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  max-width: 100%;
+  width: 100%;
+  a {
+    margin: 0 16px;
+  }
+  .nav-links {
+    flex-grow: 1;
+    text-align: center;
+    @media (max-width: 768px) {
+    }
+  }
+}
+
+.source-code {
+}
+
+div.inner {
+  margin: 0 auto;
+  width: 660px;
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
 }
 
 div.header h1 {
   font-size: 40px;
   margin-bottom: 0;
+  color: #314839;
 }
 
 div.header {
@@ -51,7 +86,7 @@ div.distance select {
 }
 
 div.distance input {
-  border: 1px solid #ccc;
+  border: 1px solid #839188;
   border-radius: 5px;
   font-size: 16px;
   padding: 3px 5px;
@@ -62,12 +97,12 @@ div.distance input {
 
 button {
   color: #fff;
-  background-color: #cc6633;
-  border: 1px solid #ccc;
+  background-color: #314839;
+  border: 1px solid #314839;
   border-radius: 5px;
-  padding: 4px 7px;
-  font-size: 13px;
-  margin-left: 6px;
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-left: 16px;
   font-family: $font-family;
 }
 
@@ -84,6 +119,7 @@ code.light {
 .hint {
   font-size: 90%;
   color: #666;
+  margin-bottom: 32px;
 }
 
 .hidden {

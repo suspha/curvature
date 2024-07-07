@@ -1,177 +1,192 @@
 module.exports = async function ($) {
   return /* HTML */ `
-    <div class="header">
-      <h1>Earth Curvature Calculator</h1>
-      <div class="madeby">
-        by <a href="https://eldoy.com">Eldøy Projects</a>
-      </div>
-      <p class="intro">
-        Accurately calculate the curvature you are supposed to see on the ball
-        Earth.
-      </p>
-    </div>
-    <div class="frame">
-      <div class="distance">
-        <label>
-          Distance:
-          <input id="distance" type="number" value="20" />
-        </label>
-
-        <span class="unit">
-          <select id="unit" name="unit" onchange="toggleNumbers()">
-            <option value="km">Kilometers</option>
-            <option value="miles">Miles</option>
-          </select>
-        </span>
-
-        <span class="calculate">
-          <button onclick="calc()">Calculate</button>
-        </span>
-      </div>
-
-      <div class="result"></div>
-    </div>
-
-    <div class="table">
-      <table id="meters">
-        <tr>
-          <th>Distance</th>
-          <th>Curvature</th>
-        </tr>
-        <tr>
-          <td>1 km</td>
-          <td>0.00008 km = 0.08 meters</td>
-        </tr>
-        <tr>
-          <td>2 km</td>
-          <td>0.00031 km = 0.31 meters</td>
-        </tr>
-        <tr>
-          <td>5 km</td>
-          <td>0.00196 km = 1.96 meters</td>
-        </tr>
-        <tr>
-          <td>10 km</td>
-          <td>0.00785 km = 7.85 meters</td>
-        </tr>
-        <tr>
-          <td>20 km</td>
-          <td>0.03139 km = 31.39 meters</td>
-        </tr>
-        <tr>
-          <td>50 km</td>
-          <td>0.19620 km = 196.20 meters</td>
-        </tr>
-        <tr>
-          <td>100 km</td>
-          <td>0.78479 km = 784.79 meters</td>
-        </tr>
-        <tr>
-          <td>200 km</td>
-          <td>3.13897 km = 3138.97 meters</td>
-        </tr>
-        <tr>
-          <td>500 km</td>
-          <td>19.6101 km = 19610.09 meters</td>
-        </tr>
-        <tr>
-          <td>1000 km</td>
-          <td>78.3196 km = 78319.62 meters</td>
-        </tr>
-      </table>
-
-      <table id="miles" class="hidden">
-        <tr>
-          <th>Distance</th>
-          <th>Curvature</th>
-        </tr>
-        <tr>
-          <td>1 mile</td>
-          <td>0.00013 miles = 0.67 feet</td>
-        </tr>
-        <tr>
-          <td>2 miles</td>
-          <td>0.00051 miles = 2.67 feet</td>
-        </tr>
-        <tr>
-          <td>5 miles</td>
-          <td>0.00316 miles = 16.67 feet</td>
-        </tr>
-        <tr>
-          <td>10 miles</td>
-          <td>0.01263 miles = 66.69 feet</td>
-        </tr>
-        <tr>
-          <td>20 miles</td>
-          <td>0.05052 miles = 266.75 feet</td>
-        </tr>
-        <tr>
-          <td>50 miles</td>
-          <td>0.31575 miles = 1667.17 feet</td>
-        </tr>
-        <tr>
-          <td>100 miles</td>
-          <td>1.26296 miles = 6668.41 feet</td>
-        </tr>
-        <tr>
-          <td>200 miles</td>
-          <td>5.05102 miles = 26669.37 feet</td>
-        </tr>
-        <tr>
-          <td>500 miles</td>
-          <td>31.5336 miles = 166497.53 feet</td>
-        </tr>
-        <tr>
-          <td>1000 miles</td>
-          <td>125.632 miles = 663337.65 feet</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="explain">
-      <h2>Explanation:</h2>
-      <div class="formula">
-        <p>
-          The Earth's radius <code class="light">(r)</code> is 6371 km or 3959
-          miles, based on numbers from
-          <a href="https://en.wikipedia.org/wiki/Earth_radius" target="_blank"
-            >Wikipedia</a
-          >,<br />
-          which gives a circumference <code class="light">(c)</code>of
-          <code>c = 2 * &pi; * r = 40 030 km</code>
+    <div class="inner">
+      <div class="header">
+        <h1>Earth Curvature Calculator</h1>
+        <div class="madeby">
+          by <a href="https://eldoy.com">Eldøy Projects</a>
+        </div>
+        <p class="intro">
+          This calculator is designed to help you visualize and quantify the
+          curvature of the Earth over any given distance, making it a valuable
+          resource for students, educators, engineers, surveyors, and curious
+          minds alike.
         </p>
         <p>
-          We wish to find the height <code class="light">(h)</code> which is the
-          drop in curvature over the distance <code class="light">(d)</code>
-        </p>
-        <p>
-          Using the circumference we find that 1 kilometer has the angle<br /><code
-            >360&deg; / 40 030 km = 0.009&deg;</code
-          >. The angle <code class="light">(a)</code> is then
-          <code>a = 0.009&deg; * distance (d)</code>
-        </p>
-        <p>
-          The derived formula <code>h = r * (1 - cos a)</code> is accurate for
-          any distance <code class="light">(d)</code>
+          Accurately calculate the curvature you are supposed to see on the ball
+          Earth.
         </p>
       </div>
-      <div class="image">
-        <img
-          src="/img/earth_curvature_calculator_formula.png"
-          alt="curvature"
-          width="333"
-          height="333"
-        />
+      <div class="frame">
+        <div class="distance">
+          <label>
+            Distance:
+            <input id="distance" type="number" value="20" />
+          </label>
+
+          <span class="unit">
+            <select id="unit" name="unit" onchange="toggleNumbers()">
+              <option value="km">Kilometers</option>
+              <option value="miles">Miles</option>
+            </select>
+          </span>
+
+          <span class="calculate">
+            <button onclick="calc()">Calculate</button>
+          </span>
+        </div>
+
+        <div class="result"></div>
       </div>
-    </div>
-    <div class="footer">
+
+      <div class="table">
+        <table id="meters">
+          <tr>
+            <th>Distance</th>
+            <th>Curvature</th>
+          </tr>
+          <tr>
+            <td>1 km</td>
+            <td>0.00008 km = 0.08 meters</td>
+          </tr>
+          <tr>
+            <td>2 km</td>
+            <td>0.00031 km = 0.31 meters</td>
+          </tr>
+          <tr>
+            <td>5 km</td>
+            <td>0.00196 km = 1.96 meters</td>
+          </tr>
+          <tr>
+            <td>10 km</td>
+            <td>0.00785 km = 7.85 meters</td>
+          </tr>
+          <tr>
+            <td>20 km</td>
+            <td>0.03139 km = 31.39 meters</td>
+          </tr>
+          <tr>
+            <td>50 km</td>
+            <td>0.19620 km = 196.20 meters</td>
+          </tr>
+          <tr>
+            <td>100 km</td>
+            <td>0.78479 km = 784.79 meters</td>
+          </tr>
+          <tr>
+            <td>200 km</td>
+            <td>3.13897 km = 3138.97 meters</td>
+          </tr>
+          <tr>
+            <td>500 km</td>
+            <td>19.6101 km = 19610.09 meters</td>
+          </tr>
+          <tr>
+            <td>1000 km</td>
+            <td>78.3196 km = 78319.62 meters</td>
+          </tr>
+        </table>
+
+        <table id="miles" class="hidden">
+          <tr>
+            <th>Distance</th>
+            <th>Curvature</th>
+          </tr>
+          <tr>
+            <td>1 mile</td>
+            <td>0.00013 miles = 0.67 feet</td>
+          </tr>
+          <tr>
+            <td>2 miles</td>
+            <td>0.00051 miles = 2.67 feet</td>
+          </tr>
+          <tr>
+            <td>5 miles</td>
+            <td>0.00316 miles = 16.67 feet</td>
+          </tr>
+          <tr>
+            <td>10 miles</td>
+            <td>0.01263 miles = 66.69 feet</td>
+          </tr>
+          <tr>
+            <td>20 miles</td>
+            <td>0.05052 miles = 266.75 feet</td>
+          </tr>
+          <tr>
+            <td>50 miles</td>
+            <td>0.31575 miles = 1667.17 feet</td>
+          </tr>
+          <tr>
+            <td>100 miles</td>
+            <td>1.26296 miles = 6668.41 feet</td>
+          </tr>
+          <tr>
+            <td>200 miles</td>
+            <td>5.05102 miles = 26669.37 feet</td>
+          </tr>
+          <tr>
+            <td>500 miles</td>
+            <td>31.5336 miles = 166497.53 feet</td>
+          </tr>
+          <tr>
+            <td>1000 miles</td>
+            <td>125.632 miles = 663337.65 feet</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="explain">
+        <h2>Explanation:</h2>
+        <div class="formula">
+          <p>
+            The Earth's radius <code class="light">(r)</code> is 6371 km or 3959
+            miles, based on numbers from
+            <a href="https://en.wikipedia.org/wiki/Earth_radius" target="_blank"
+              >Wikipedia</a
+            >,<br />
+            which gives a circumference <code class="light">(c)</code>of
+            <code>c = 2 * &pi; * r = 40 030 km</code>
+          </p>
+          <p>
+            We wish to find the height <code class="light">(h)</code> which is
+            the drop in curvature over the distance
+            <code class="light">(d)</code>
+          </p>
+          <p>
+            Using the circumference we find that 1 kilometer has the angle<br /><code
+              >360&deg; / 40 030 km = 0.009&deg;</code
+            >. The angle <code class="light">(a)</code> is then
+            <code>a = 0.009&deg; * distance (d)</code>
+          </p>
+          <p>
+            The derived formula <code>h = r * (1 - cos a)</code> is accurate for
+            any distance <code class="light">(d)</code>
+          </p>
+        </div>
+        <div class="image">
+          <img
+            src="/img/earth_curvature_calculator_formula.png"
+            alt="curvature"
+            width="333"
+            height="333"
+          />
+        </div>
+        <p class="hint">
+          Note: Using the formula
+          <em>8 times the distance in miles squared</em> is not accurate for<br />
+          long distances but is fine for practical use.
+        </p>
+      </div>
       <p>
-        <a href="https://github.com/suongp/curvature">Source code</a>
+        Whether you're calculating the curvature over a few miles or thousands
+        of kilometers, our Earth Curvature Calculator provides quick and
+        accurate results, helping you appreciate the subtle yet significant
+        curvature of our planet.
       </p>
-      <p class="hint">
-        Note: Using the formula
-        <em>8 times the distance in miles squared</em> is not accurate for long
-        distances but is fine for practical use.
+      <p>
+        Explore the wonders of Earth's geometry with our user-friendly and
+        informative tool. Start calculating today and uncover the hidden curves
+        of our world!
       </p>
     </div>
     <script>

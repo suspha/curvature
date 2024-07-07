@@ -40,6 +40,17 @@ module.exports = async function ($) {
         ></script>
       </head>
       <body>
+        <nav>
+          <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/what">What is Earth Curvature?</a>
+            <a href="/why">Why</a>
+            <a href="/how">How</a>
+          </div>
+          <div class="source-code">
+            <a href="https://github.com/suspha/curvature">Source code</a>
+          </div>
+        </nav>
         <div class="content">${$.page.content}</div>
         <footer>
           Made by <a href="https://eldoy.com">Eldøy Projects</a>, Oslo, Norway

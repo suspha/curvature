@@ -4,7 +4,7 @@
   "description": "Calculate the Earth curvature",
   "scripts": {
     "dev": "npm run clear:css && npm run build:css && concurrently -n 🔥,💗 \"npm run watch:app\" \"npm run watch:css\"",
-    "watch:app": "nodemon -e '*' -i dist -x waveorb serve",
+    "watch:app": "WAVEORB_PORT=5188 nodemon -e '*' -i dist -x waveorb serve",
     "watch:css": "sass --watch app/assets/scss/app.scss app/assets/css/build/app.css",
     "build:css": "sass app/assets/scss/app.scss app/assets/css/build/app.css",
     "build:css:min": "sass --style compressed --no-source-map app/assets/scss/app.scss app/assets/css/build/app.css",
