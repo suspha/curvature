@@ -15,6 +15,9 @@ body {
   color: #111;
   font-size: 18px;
   line-height: 1.6;
+  @media (max-width: 768px) {
+    display: inline-block;
+  }
 }
 
 footer {
@@ -43,11 +46,9 @@ nav {
     flex-grow: 1;
     text-align: center;
     @media (max-width: 768px) {
+      text-align: left;
     }
   }
-}
-
-.source-code {
 }
 
 div.inner {
@@ -86,7 +87,7 @@ div.distance select {
 }
 
 div.distance input {
-  border: 1px solid #839188;
+  border: 1px solid #d5dad7;
   border-radius: 5px;
   font-size: 16px;
   padding: 3px 5px;
