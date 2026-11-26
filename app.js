@@ -6,6 +6,8 @@ var layout = require('./app/layouts/main.js')
 
 var port = process.env.APP_PORT || 26216
 var assetPath = path.join(__dirname, 'app', 'assets')
+var production = process.env.NODE_ENV === 'production'
+var revision = Date.now()
 
 var routes = {
   '/': require('./app/pages/index.js'),
@@ -40,10 +42,14 @@ async function asset(req, res, pathname) {
     if (!stat.isFile()) return false
     var data = await fsp.readFile(file)
     var type = mimes[path.extname(file).toLowerCase()]
-    res.writeHead(200, {
+    var headers = {
       'content-type': type || 'application/octet-stream',
       'content-length': data.length
-    })
+    }
+    if (production) {
+      headers['cache-control'] = 'public, max-age=31536000'
+    }
+    res.writeHead(200, headers)
     res.end(req.method === 'HEAD' ? undefined : data)
     return true
   } catch {
@@ -52,7 +58,7 @@ async function asset(req, res, pathname) {
 }
 
 var server = http.createServer(async function (req, res) {
-  var state = { req, res }
+  var state = { req, res, revision }
 
   try {
     var pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname)

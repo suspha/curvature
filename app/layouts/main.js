@@ -14,7 +14,7 @@ module.exports = async function (state) {
           Earth Curvature Calculator - Calculate the curve you should see
         </title>
         <link rel="icon" type="image/png" href="/img/favicon.png" />
-        <link rel="stylesheet" href="/css/app.css" />
+        <link rel="stylesheet" href="/css/app.css?v=${state.revision}" />
       </head>
       <body>
         <nav>
