@@ -4,7 +4,7 @@ var path = require('node:path')
 
 var layout = require('./app/layouts/main.js')
 
-var port = process.env.APP_PORT || 5188
+var port = process.env.APP_PORT || 26216
 var assetPath = path.join(__dirname, 'app', 'assets')
 
 var routes = {

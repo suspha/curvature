@@ -10,4 +10,4 @@ npm run dev
 npm start
 ```
 
-Runs on port 5188, or `APP_PORT` if set.
+Runs on port 26216, or `APP_PORT` if set.
