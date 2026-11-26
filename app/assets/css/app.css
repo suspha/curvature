@@ -1,9 +1,7 @@
-$font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-
 *,
 *:after,
 *:before {
-  font-family: $font-family;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -15,7 +13,9 @@ body {
   color: #111;
   font-size: 18px;
   line-height: 1.6;
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+  body {
     display: inline-block;
   }
 }
@@ -39,22 +39,26 @@ nav {
   padding: 24px;
   max-width: 100%;
   width: 100%;
-  a {
-    margin: 0 16px;
-  }
-  .nav-links {
-    flex-grow: 1;
-    text-align: center;
-    @media (max-width: 768px) {
-      text-align: left;
-    }
+}
+nav a {
+  margin: 0 16px;
+}
+nav .nav-links {
+  flex-grow: 1;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  nav .nav-links {
+    text-align: left;
   }
 }
 
 div.inner {
   margin: 0 auto;
   width: 660px;
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+  div.inner {
     padding: 24px;
   }
 }
@@ -93,7 +97,7 @@ div.distance input {
   padding: 3px 5px;
   width: 100px;
   margin-left: 6px;
-  font-family: $font-family;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
 button {
@@ -104,7 +108,7 @@ button {
   padding: 8px 16px;
   font-size: 16px;
   margin-left: 16px;
-  font-family: $font-family;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
 code {

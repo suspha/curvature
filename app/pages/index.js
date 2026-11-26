@@ -1,4 +1,4 @@
-module.exports = async function ($) {
+module.exports = async function (state) {
   return /* HTML */ `
     <div class="inner">
       <div class="header">

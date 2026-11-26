@@ -1,4 +1,4 @@
-module.exports = async function ($) {
+module.exports = async function (state) {
   return /* HTML */ `
     <!DOCTYPE html>
     <html lang="en">
@@ -20,8 +20,7 @@ module.exports = async function ($) {
           Earth Curvature Calculator - Calculate the curve you should see
         </title>
         <link rel="icon" type="image/png" href="/img/favicon.png" />
-        ${$.script('/bundle.js')} ${$.style('/bundle.css')}
-        ${process.env.NODE_ENV == 'development' ? $.script('/js/dev.js') : ''}
+        <link rel="stylesheet" href="/css/app.css" />
         <script
           async
           defer
@@ -51,7 +50,7 @@ module.exports = async function ($) {
             <a href="https://github.com/suspha/curvature">Source code</a>
           </div>
         </nav>
-        <div class="content">${$.page.content}</div>
+        <div class="content">${state.content}</div>
         <footer>
           Made by <a href="https://eldoy.com">Eldøy Projects</a>, Oslo, Norway
         </footer>

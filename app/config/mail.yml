@@ -1,7 +1,0 @@
-options:
-  reply: hello@example.com
-  from: hello@example.com
-  to: hello@example.com
-mailgun:
-  domain: example.com
-  key: YOUR_MAILGUN_API_KEY
